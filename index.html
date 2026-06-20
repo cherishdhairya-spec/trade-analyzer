@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Analyzer</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Stock Analyzer</h1>
+        <p>Medium-term scanner, charts, holdings, risk and Zerodha controls.</p>
+      </div>
+      <div class="status">
+        <span id="liveMode">{{ "LIVE" if live_trading else "PAPER" }}</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="toolbar">
+        <label>
+          Risk profile
+          <select id="profile">
+            <option value="less">Less risk</option>
+            <option value="moderate" selected>Moderate risk</option>
+            <option value="high">High risk</option>
+          </select>
+        </label>
+        <button id="scanBtn">Run scan now</button>
+        <button id="zerodhaBtn">Refresh Zerodha</button>
+      </section>
+
+      <section class="grid">
+        <div class="panel wide">
+          <div class="panel-title">
+            <h2>Selected top 10</h2>
+            <span id="scanTime">No scan loaded</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Stock</th><th>Score</th><th>Action</th><th>Risk</th><th>Entry</th><th>Stop</th><th>Target</th><th>Risk %</th><th>Profit %</th><th></th>
+                </tr>
+              </thead>
+              <tbody id="topRows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">
+            <h2>Zerodha</h2>
+            <a id="loginLink" href="#" target="_blank">Login</a>
+          </div>
+          <div id="zerodhaBox" class="stack"></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel wide">
+          <div class="panel-title">
+            <h2 id="chartTitle">Chart</h2>
+            <div class="tradebox">
+              <input id="qty" type="number" min="1" value="1" />
+              <button id="buyBtn">Buy</button>
+              <button id="sellBtn">Sell</button>
+            </div>
+          </div>
+          <div id="chartBox" class="chartbox"></div>
+        </div>
+
+        <div class="panel">
+          <h2>Full analysis</h2>
+          <div id="detailBox" class="stack muted">Select a stock.</div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <h2>Best 30-50 candidates</h2>
+          <span>Ranked before top 10 selection</span>
+        </div>
+        <div id="candidateCards" class="cards"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
