@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import plotly.graph_objects as go
 
-from .data_sources import fetch_history
-from .indicators import add_indicators
-from .patterns import detect_patterns
+from data_sources import fetch_history
+from indicators import add_indicators
+from patterns import detect_patterns
 
 
 def make_candlestick(symbol: str, entry: float | None = None, stoploss: float | None = None, target: float | None = None) -> str:
