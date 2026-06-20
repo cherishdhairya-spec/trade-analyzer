@@ -10,11 +10,11 @@ from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from .charts import make_candlestick
-from .config import BASE_DIR, get_settings
-from .database import ScanRun, StockScore, db_session, init_db
-from .scoring import dumps_analysis, run_scan
-from .zerodha import create_session, holdings, login_url, margins, order_logs, place_order
+from charts import make_candlestick
+from config import BASE_DIR, get_settings
+from database import ScanRun, StockScore, db_session, init_db
+from scoring import dumps_analysis, run_scan
+from zerodha import create_session, holdings, login_url, margins, order_logs, place_order
 
 app = FastAPI(title="Stock Analyzer")
 templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
