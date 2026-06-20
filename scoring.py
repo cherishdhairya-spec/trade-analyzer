@@ -7,10 +7,10 @@ from dataclasses import asdict, dataclass
 
 import numpy as np
 
-from .data_sources import fetch_benchmark, fetch_history, fetch_info
-from .indicators import add_indicators, beta_alpha, support_resistance
-from .patterns import detect_patterns
-from .universe import get_universe
+from data_sources import fetch_benchmark, fetch_history, fetch_info
+from indicators import add_indicators, beta_alpha, support_resistance
+from patterns import detect_patterns
+from universe import get_universe
 
 
 PROFILE_RULES = {
