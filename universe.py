@@ -1,4 +1,4 @@
-from .config import get_settings
+from config import get_settings
 
 
 DEFAULT_NSE_UNIVERSE = [
