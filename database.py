@@ -7,7 +7,7 @@ from typing import Iterator
 from sqlalchemy import DateTime, Float, Integer, String, Text, create_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column, sessionmaker
 
-from .config import get_settings
+from config import get_settings
 
 
 class Base(DeclarativeBase):
