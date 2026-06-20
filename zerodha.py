@@ -5,8 +5,8 @@ from typing import Any
 
 from kiteconnect import KiteConnect
 
-from .config import get_settings
-from .database import OrderLog, Setting, db_session
+from config import get_settings
+from database import OrderLog, Setting, db_session
 
 
 def _kite() -> KiteConnect | None:
